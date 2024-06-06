@@ -37,6 +37,7 @@ declare -r -a CONFIG_APPS_INSTALL=(
     "me.zhanghai.android.files"
     "net.minetest.minetest"
     "net.sourceforge.opencamera"
+    "net.typeblog.shelter"
     "org.cromite.cromite"
     "org.fossify.calendar"
     "org.fossify.contacts"
@@ -92,6 +93,15 @@ function _internal_modify_android_settings() {
     # Validate we are in the root project directory
     cd $CONST_ROOT_DIRECTORY
 
+    # Change wallpaper
+    adb push "./resources/studio_ghibli_cat.png" "/storage/emulated/0/Download/"
+    adb shell am start \
+    -a android.intent.action.ATTACH_DATA \
+    -c android.intent.category.DEFAULT \
+    -d file:///storage/emulated/0/Download/studio_ghibli_cat.png \
+    -t 'image/*' \
+    -e mimeType 'image/*'
+
     # Iterate through system settings
     for setting in "${CONST_SYSTEM_SETTINGS[@]}"; do
         # Modify setting
@@ -112,15 +122,6 @@ function _internal_modify_android_settings() {
         # Disable
         adb shell pm disable $app
     done
-
-    # Change wallpaper
-    adb push "./resources/studio_ghibli_cat.png" "/storage/emulated/0/Download/"
-    adb shell am start \
-    -a android.intent.action.ATTACH_DATA \
-    -c android.intent.category.DEFAULT \
-    -d file:///storage/emulated/0/Download/studio_ghibli_cat.png \
-    -t 'image/*' \
-    -e mimeType 'image/*'
 }
 
 # Installs all third party apps located in /resources
