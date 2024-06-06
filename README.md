@@ -8,4 +8,6 @@
 <h3 align="center">Post-installation script</h3>
 
 <!-- GIF -->
-<p align="center"><img src="https://media1.tenor.com/m/r2JQ7OID2FIAAAAd/linux.gif"/></p>
+<p align="center">
+  <img src="https://media1.tenor.com/m/r2JQ7OID2FIAAAAd/linux.gif"/>
+</p>
