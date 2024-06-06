@@ -9,5 +9,5 @@
 
 <!-- GIF -->
 <p align="center">
-  <img src="https://media1.tenor.com/m/r2JQ7OID2FIAAAAd/linux.gif"/>
+  <img src="https://c.tenor.com/JFVk98vql5gAAAAd/tenor.gif"/>
 </p>
