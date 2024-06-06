@@ -95,6 +95,12 @@ function _internal_modify_android_settings() {
     # Validate we are in the root project directory
     cd $CONST_ROOT_DIRECTORY
 
+    # Start the new gallery app first so the user provides the needed permissions
+    adb shell am start org.fossify.gallery/.activities.MainActivity
+
+    # Wait for authorization
+    read -n 1 -p "Press Enter Once Granted: "
+
     # Change wallpaper
     adb push "./resources/studio_ghibli_cat.png" "/storage/emulated/0/Download/"
     adb shell am start \
