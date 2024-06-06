@@ -30,6 +30,8 @@ declare -r -a CONFIG_APPS_INSTALL=(
     "com.hjiangsu.thunder"
     "com.looker.droidify"
     "com.nononsenseapps.feeder"
+    "com.termux"
+    "com.termux.widget"
     "com.x8bit.bitwarden"
     "helium314.keyboard"
     "io.anuke.mindustry"
