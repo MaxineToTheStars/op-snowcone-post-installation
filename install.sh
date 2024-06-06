@@ -102,6 +102,9 @@ function _internal_modify_android_settings() {
     -t 'image/*' \
     -e mimeType 'image/*'
 
+    # Wait for authorization
+    read -n 1 -p "Press Enter Once Applied: "
+
     # Iterate through system settings
     for setting in "${CONST_SYSTEM_SETTINGS[@]}"; do
         # Modify setting
