@@ -137,7 +137,7 @@ function _internal_install_third_party_apps() {
     # Iterate through the list
     for appURL in "${CONFIG_APPS_EXTERNAL_INSTALL[@]}"; do
         # Download
-        wget --output-file=./resources/out.apk --verbose --relative $appURL
+        curl --output ./resources/out.apk --location $appURL
 
         # Install
         adb install ./resources/out.apk > /dev/null 2>&1
