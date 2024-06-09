@@ -14,5 +14,4 @@
 <p align="center">
   <img src="https://media1.tenor.com/m/BnjcVvUXASYAAAAC/lineageos-custom-rom.gif"/>
   <img src="https://media1.tenor.com/m/lTZ3JUXbuJIAAAAC/oneplus-oppo.gif"/>
-  <img src="https://media1.tenor.com/m/JFVk98vql5gAAAAd/linux-trash.gif">
 </p>

@@ -9,18 +9,7 @@
 #!/usr/bin/env bash
 
 # Configuration
-declare -r -a CONFIG_APPS_DISABLE=(
-    "com.android.calculator2"
-    "com.android.camera2"
-    "com.android.contacts"
-    "com.android.deskclock"
-    "com.android.dialer"
-    "com.android.documentsui"
-    "com.android.gallery3d"
-    "com.android.messaging"
-)
 declare -r -a CONFIG_APPS_EXTERNAL_INSTALL=(
-    "https://github.com/ReVanced/revanced-manager/releases/download/v1.20.1/revanced-manager-v1.20.1.apk"
     "https://github.com/xManager-App/xManager/releases/latest/download/xManager.apk"
 )
 declare -r -a CONFIG_APPS_INSTALL=(
@@ -38,6 +27,7 @@ declare -r -a CONFIG_APPS_INSTALL=(
     "com.termux"
     "com.topjohnwu.magisk"
     "com.x8bit.bitwarden"
+    "de.dennisguse.opentracks"
     "dev.octoshrimpy.quik"
     "helium314.keyboard"
     "io.anuke.mindustry"
@@ -192,18 +182,6 @@ function _internal_modify_android_settings() {
     for app in "${CONFIG_APPS_REMOVE[@]}"; do
         # Remove
         adb uninstall --user 0 $app > /dev/null 2>&1
-    done
-
-    # Log
-    echo "[LOG] Disabling replaced system apps..."
-
-    # Disable some system apps
-    for app in "${CONFIG_APPS_DISABLE[@]}"; do
-        # Clear data
-        adb shell pm clear $app > /dev/null 2>&1
-
-        # Disable
-        adb shell pm disable $app > /dev/null 2>&1
     done
 
     # Log
